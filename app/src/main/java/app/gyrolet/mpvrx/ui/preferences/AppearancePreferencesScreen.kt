@@ -491,18 +491,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val showUnplayedOldVideoLabel by preferences.showUnplayedOldVideoLabel.collectAsState()
               SwitchPreference(
@@ -529,18 +517,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val unplayedOldVideoDays by preferences.unplayedOldVideoDays.collectAsState()
               SliderPreference(
@@ -574,18 +550,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val autoScrollToLastPlayed by browserPreferences.autoScrollToLastPlayed.collectAsState()
               SwitchPreference(
@@ -604,18 +568,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               ListPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_tree_flatten_depth_title),
@@ -636,18 +588,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.ui_dual_pane_view),
@@ -673,18 +613,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val watchedThreshold by browserPreferences.watchedThreshold.collectAsState()
               val effectiveThreshold = watchedThreshold.coerceAtLeast(0)
@@ -719,18 +647,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val deleteFolderAllContents by browserPreferences.deleteFolderAllContents.collectAsState()
               SwitchPreference(
@@ -789,18 +705,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               ListPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_appearance_thumbnail_generation_title),
@@ -832,18 +736,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               ListPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_appearance_thumbnail_quality_title),
@@ -908,18 +800,6 @@ object AppearancePreferencesScreen : Screen {
               }
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val tapThumbnailToSelect by gesturePreferences.tapThumbnailToSelect.collectAsState()
               SwitchPreference(
@@ -944,18 +824,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val showNetworkThumbnails by preferences.showNetworkThumbnails.collectAsState()
               SwitchPreference(
@@ -998,7 +866,6 @@ object AppearancePreferencesScreen : Screen {
               val showNetworkTab by preferences.showNetworkTab.collectAsState()
               val showJellyfinTab by preferences.showJellyfinTab.collectAsState()
               val showSnapshotTab by preferences.showSnapshotTab.collectAsState()
-              val showRelaxButton by preferences.showRelaxButton.collectAsState()
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_music_title),
@@ -1014,18 +881,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_recents_title),
@@ -1041,18 +896,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_playlists_title),
@@ -1068,18 +911,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_network_title),
@@ -1095,18 +926,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_jellyfin_title),
@@ -1122,18 +941,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_snapshots_title),
@@ -1149,6 +956,8 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
+
+              val showRelaxButton by preferences.showRelaxButton.collectAsState()
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
                 value = showRelaxButton,
@@ -1161,6 +970,9 @@ object AppearancePreferencesScreen : Screen {
                   )
                 },
               )
+
+              PreferenceDivider()
+
 
               val showQuickPlayFab by preferences.showQuickPlayFab.collectAsState()
               SwitchPreference(
@@ -1177,18 +989,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val quickPlayFabDirect by preferences.quickPlayFabDirect.collectAsState()
               SwitchPreference(
@@ -1231,18 +1031,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val videoOpenAnim by playerPreferences.videoOpenAnimation.collectAsState()
               ListPreference(
@@ -1261,18 +1049,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val appNavStyle by playerPreferences.appNavStyle.collectAsState()
               ListPreference(
@@ -1291,18 +1067,6 @@ object AppearancePreferencesScreen : Screen {
               )
 
               PreferenceDivider()
-              SwitchPreference(
-                modifier = Modifier.settingsSearchTarget(R.string.pref_nav_relax_title),
-                value = showRelaxButton,
-                onValueChange = preferences.showRelaxButton::set,
-                title = { Text(text = stringResource(id = R.string.pref_nav_relax_title)) },
-                summary = {
-                  Text(
-                    text = stringResource(id = R.string.pref_nav_relax_summary),
-                    color = MaterialTheme.colorScheme.outline,
-                  )
-                },
-              )
 
               val animSpeed by playerPreferences.animationSpeed.collectAsState()
               SliderPreference(
