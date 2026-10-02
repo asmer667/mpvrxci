@@ -2669,6 +2669,9 @@
 
   <!-- Snapshots (frame capture) -->
   <string name="ui_snapshots">Snapshots</string>
+    <string name="ui_relax">استراحة</string>
+    <string name="pref_nav_relax_title">استراحة</string>
+    <string name="pref_nav_relax_summary">إظهار شاشة استراحة في شريط التنقل</string>
   <string name="pref_nav_snapshots_title">Show Snapshots tab</string>
   <string name="pref_nav_snapshots_summary">Show or hide Snapshots in the bottom navigation bar</string>
 

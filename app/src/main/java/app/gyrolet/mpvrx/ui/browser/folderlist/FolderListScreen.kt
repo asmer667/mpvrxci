@@ -24,7 +24,6 @@ import app.gyrolet.mpvrx.ui.browser.fab.FabScrollHelper
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.WindowInsets
@@ -1455,6 +1454,11 @@ private fun GridContent(
 
         FolderCard(
           folder = folder,
+          modifier = Modifier.cinematicNeonBorder(
+            folderName = folder.name,
+            isActive = isActive,
+            isSelected = selectionManager.isSelected(folder),
+          ),
           isSelected = selectionManager.isSelected(folder),
           isRecentlyPlayed = isRecentlyPlayed,
           onClick = { onFolderClick(folder) },
@@ -1561,6 +1565,11 @@ private fun ListContent(
 
         FolderCard(
           folder = folder,
+          modifier = Modifier.cinematicNeonBorder(
+            folderName = folder.name,
+            isActive = isActive,
+            isSelected = selectionManager.isSelected(folder),
+          ),
           isSelected = selectionManager.isSelected(folder),
           isRecentlyPlayed = isRecentlyPlayed,
           onClick = { onFolderClick(folder) },

@@ -138,6 +138,7 @@ object MainScreen : Screen {
     NETWORK,
     JELLYFIN,
     SNAPSHOTS,
+    RELAX,
   }
 
   /**
@@ -194,6 +195,7 @@ object MainScreen : Screen {
     val showNetworkTab by appearancePreferences.showNetworkTab.collectAsState()
     val showJellyfinTab by appearancePreferences.showJellyfinTab.collectAsState()
     val showSnapshotTab by appearancePreferences.showSnapshotTab.collectAsState()
+    val showRelaxButton by appearancePreferences.showRelaxButton.collectAsState()
     val liquidGlassEnabled by appearancePreferences.liquidGlassEnabled.collectAsState()
     val hideNavigationBar = NavigationBarState.shouldHideNavigationBar
     val isPermissionDenied = NavigationBarState.isPermissionDenied
@@ -208,6 +210,7 @@ object MainScreen : Screen {
         showNetworkTab,
         showJellyfinTab,
         showSnapshotTab,
+        showRelaxButton,
       ) {
         buildList {
           // Home is the permanent root so Back never exits directly from another tab.
@@ -218,6 +221,7 @@ object MainScreen : Screen {
           if (showNetworkTab) add(MainTab.NETWORK)
           if (showJellyfinTab) add(MainTab.JELLYFIN)
           if (showSnapshotTab) add(MainTab.SNAPSHOTS)
+          if (showRelaxButton) add(MainTab.RELAX)
         }
       }
     val navigationTabs = visibleTabs.takeIf { it.size > 1 }.orEmpty()
@@ -589,7 +593,8 @@ object MainScreen : Screen {
                 MainTab.PLAYLISTS -> PlaylistScreen.Content()
                 MainTab.NETWORK -> NetworkStreamingScreen.Content()
                 MainTab.JELLYFIN -> app.gyrolet.mpvrx.ui.browser.jellyfin.JellyfinContent(viewModel = jellyfinViewModel)
-                MainTab.SNAPSHOTS -> app.gyrolet.mpvrx.ui.framecapture.SnapshotScreen.Content()
+                MainTab.SNAPSHOTS -> app.gyrolet.mpvrx.ui.browser.framecapture.SnapshotScreen.Content()
+                MainTab.RELAX -> app.gyrolet.mpvrx.ui.relax.RelaxScreen()
               }
             }
           }
@@ -797,6 +802,7 @@ internal fun ExpressivePillNavigationBar(
                 MainScreen.MainTab.NETWORK -> stringResource(R.string.ui_network)
                 MainScreen.MainTab.JELLYFIN -> stringResource(R.string.ui_jellyfin)
                 MainScreen.MainTab.SNAPSHOTS -> stringResource(R.string.ui_snapshots)
+                MainScreen.MainTab.RELAX -> stringResource(R.string.ui_relax)
               }
             val contentColor =
               androidx.compose.ui.graphics.lerp(
@@ -868,6 +874,7 @@ private fun MainTabIcon(
     MainScreen.MainTab.NETWORK -> Icons.RoundedFilled.BringYourOwnIp
     MainScreen.MainTab.JELLYFIN -> null
     MainScreen.MainTab.SNAPSHOTS -> Icons.RoundedFilled.Image
+    MainScreen.MainTab.RELAX -> Icons.RoundedFilled.PhotoCamera
   }
   if (icon == null) {
     androidx.compose.material3.Icon(
