@@ -4,19 +4,18 @@
 
 package app.gyrolet.mpvrx.ui.browser.cards
 
+import androidx.compose.foundation.border
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.drawBehind
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.unit.dp
 
 /**
  * Lightweight neon edging for media cards.
- * Uses three lightweight gradient passes rather than expensive blur layers.
+ * Uses a simple gradient border — no drawOutline, no blur.
  */
 @Composable
 internal fun Modifier.neonGlassBorder(
@@ -38,39 +37,9 @@ internal fun Modifier.neonGlassBorder(
         ),
     )
 
-    val outerGlass = Brush.linearGradient(
-        colors = listOf(
-            secondary.copy(alpha = 0.12f),
-            primary.copy(alpha = 0.16f),
-            tertiary.copy(alpha = 0.12f),
-        ),
+    return this.border(
+        width = 1.5.dp,
+        brush = edge,
+        shape = shape,
     )
-
-    val innerGlass = Brush.linearGradient(
-        colors = listOf(
-            Color.White.copy(alpha = 0.24f),
-            secondary.copy(alpha = 0.42f),
-            primary.copy(alpha = 0.34f),
-        ),
-    )
-
-    return drawBehind {
-        val outline = shape.createOutline(size, layoutDirection, this)
-        // Three restrained passes create a layered glass edge without per-card blur surfaces.
-        drawOutline(
-            outline = outline,
-            brush = outerGlass,
-            style = Stroke(width = 8.dp.toPx()),
-        )
-        drawOutline(
-            outline = outline,
-            brush = edge,
-            style = Stroke(width = 3.dp.toPx()),
-        )
-        drawOutline(
-            outline = outline,
-            brush = innerGlass,
-            style = Stroke(width = 1.dp.toPx()),
-        )
-    }
 }
