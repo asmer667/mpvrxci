@@ -34,8 +34,8 @@ import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.PlayArrow
+import app.gyrolet.mpvrx.ui.icons.Icons
+
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -204,7 +204,7 @@ private fun CinematicVideoCard(
                 .padding(10.dp),
         ) {
             Text(
-                text = video.displayName.ifBlank { video.name },
+                text = video.title,
                 color = Color.White,
                 fontSize = if (isFeatured) 13.sp else 11.sp,
                 fontWeight = FontWeight.Bold,
@@ -232,8 +232,8 @@ private fun CinematicVideoCard(
                     .border(1.5.dp, NeonCyan, CircleShape),
                 contentAlignment = Alignment.Center,
             ) {
-                androidx.compose.material3.Icon(
-                    imageVector = Icons.Default.PlayArrow,
+                app.gyrolet.mpvrx.ui.icons.Icon(
+                    imageVector = Icons.RoundedFilled.PlayArrow,
                     contentDescription = null,
                     tint = NeonCyan,
                     modifier = Modifier.size(22.dp),

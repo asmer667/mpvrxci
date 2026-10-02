@@ -8,16 +8,6 @@
 package app.gyrolet.mpvrx.ui.browser.cards
 
 import androidx.compose.foundation.border
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Article
-import androidx.compose.material.icons.filled.Download
-import androidx.compose.material.icons.filled.Folder
-import androidx.compose.material.icons.filled.Image
-import androidx.compose.material.icons.filled.Movie
-import androidx.compose.material.icons.filled.MusicNote
-import androidx.compose.material.icons.filled.PhotoCamera
-import androidx.compose.material.icons.filled.Tv
-import androidx.compose.material.icons.filled.VideoLibrary
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.drawBehind
@@ -27,7 +17,8 @@ import androidx.compose.ui.graphics.NativePaint
 import androidx.compose.ui.graphics.drawscope.drawIntoCanvas
 import androidx.compose.ui.graphics.nativeCanvas
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.graphics.vector.ImageVector
+import app.gyrolet.mpvrx.ui.icons.AppIcon as ImageVector
+import app.gyrolet.mpvrx.ui.icons.Icons
 import androidx.compose.ui.unit.dp
 
 data class FolderColors(
@@ -40,22 +31,22 @@ fun cinematicFolderColors(name: String): FolderColors {
     val lower = name.lowercase()
     return when {
         listOf("فيلم", "أفلام", "افلام", "movie", "film", "cinema").any { lower.contains(it) } ->
-            FolderColors(Color(0xFF8A00FF), Color(0xFFFF007A), Icons.Default.Movie)
+            FolderColors(Color(0xFF8A00FF), Color(0xFFFF007A), Icons.RoundedFilled.Movie)
         listOf("مسلسل", "مسلسلات", "series", "show", "tv", "season").any { lower.contains(it) } ->
-            FolderColors(Color(0xFF0066FF), Color(0xFF00F0FF), Icons.Default.Tv)
+            FolderColors(Color(0xFF0066FF), Color(0xFF00F0FF), Icons.RoundedFilled.Tv)
         listOf("موسيق", "اغاني", "أغاني", "music", "audio", "song", "mp3").any { lower.contains(it) } ->
-            FolderColors(Color(0xFFFF007A), Color(0xFF8A00FF), Icons.Default.MusicNote)
+            FolderColors(Color(0xFFFF007A), Color(0xFF8A00FF), Icons.RoundedFilled.MusicNote)
         listOf("صور", "photo", "picture", "gallery").any { lower.contains(it) } ->
-            FolderColors(Color(0xFFFF7A00), Color(0xFFFFE600), Icons.Default.PhotoCamera)
+            FolderColors(Color(0xFFFF7A00), Color(0xFFFFE600), Icons.RoundedFilled.Image)
         listOf("فيديو", "فيديوهات", "video", "vid", "clip").any { lower.contains(it) } ->
-            FolderColors(Color(0xFF00F0FF), Color(0xFF8A00FF), Icons.Default.VideoLibrary)
+            FolderColors(Color(0xFF00F0FF), Color(0xFF8A00FF), Icons.RoundedFilled.VideoLibrary)
         listOf("image", "img", "screenshot").any { lower.contains(it) } ->
-            FolderColors(Color(0xFFFF1E8A), Color(0xFFFFE600), Icons.Default.Image)
+            FolderColors(Color(0xFFFF1E8A), Color(0xFFFFE600), Icons.RoundedFilled.Image)
         listOf("download", "تحميل", "تحميلات").any { lower.contains(it) } ->
-            FolderColors(Color(0xFF39FF14), Color(0xFF00F0FF), Icons.Default.Download)
+            FolderColors(Color(0xFF39FF14), Color(0xFF00F0FF), Icons.RoundedFilled.Download)
         listOf("وثائق", "document", "doc", "pdf").any { lower.contains(it) } ->
-            FolderColors(Color(0xFFFFD500), Color(0xFFFF007A), Icons.Default.Article)
-        else -> FolderColors(Color(0xFF8A00FF), Color(0xFF00F0FF), Icons.Default.Folder)
+            FolderColors(Color(0xFFFFD500), Color(0xFFFF007A), Icons.RoundedFilled.Article)
+        else -> FolderColors(Color(0xFF8A00FF), Color(0xFF00F0FF), Icons.RoundedFilled.Folder)
     }
 }
 

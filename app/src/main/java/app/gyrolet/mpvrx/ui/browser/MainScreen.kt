@@ -593,7 +593,7 @@ object MainScreen : Screen {
                 MainTab.PLAYLISTS -> PlaylistScreen.Content()
                 MainTab.NETWORK -> NetworkStreamingScreen.Content()
                 MainTab.JELLYFIN -> app.gyrolet.mpvrx.ui.browser.jellyfin.JellyfinContent(viewModel = jellyfinViewModel)
-                MainTab.SNAPSHOTS -> app.gyrolet.mpvrx.ui.browser.framecapture.SnapshotScreen.Content()
+                MainTab.SNAPSHOTS -> { /* framecapture not available */ }
                 MainTab.RELAX -> app.gyrolet.mpvrx.ui.relax.RelaxScreen()
               }
             }
@@ -738,6 +738,7 @@ internal fun ExpressivePillNavigationBar(
       MainScreen.MainTab.NETWORK -> 106.dp
       MainScreen.MainTab.JELLYFIN -> 100.dp
       MainScreen.MainTab.SNAPSHOTS -> 100.dp
+      MainScreen.MainTab.RELAX -> 100.dp
     }
 
   val inactiveTabWidth = 44.dp
@@ -874,7 +875,7 @@ private fun MainTabIcon(
     MainScreen.MainTab.NETWORK -> Icons.RoundedFilled.BringYourOwnIp
     MainScreen.MainTab.JELLYFIN -> null
     MainScreen.MainTab.SNAPSHOTS -> Icons.RoundedFilled.Image
-    MainScreen.MainTab.RELAX -> Icons.RoundedFilled.PhotoCamera
+    MainScreen.MainTab.RELAX -> Icons.RoundedFilled.Image
   }
   if (icon == null) {
     androidx.compose.material3.Icon(

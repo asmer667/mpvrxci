@@ -35,7 +35,7 @@ import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Icon
+import app.gyrolet.mpvrx.ui.icons.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -62,6 +62,7 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import app.gyrolet.mpvrx.ui.icons.Icons
+import app.gyrolet.mpvrx.ui.icons.AppIcon
 
 /**
  * نموذج بيانات وسائط (فيديو أو صورة)
@@ -284,7 +285,7 @@ private fun RelaxContent(
                 RelaxSectionHeader(
                     title = "Photos",
                     subtitle = "صور",
-                    icon = Icons.RoundedFilled.PhotoCamera,
+                    icon = Icons.RoundedFilled.Image,
                     count = photos.size,
                 )
             }
@@ -310,7 +311,7 @@ private fun RelaxContent(
         if (shorts.isEmpty() && videos.isEmpty() && photos.isEmpty()) {
             item {
                 RelaxEmptyState(
-                    icon = Icons.RoundedFilled.PhotoCamera,
+                    icon = Icons.RoundedFilled.Image,
                     message = "لا يوجد محتوى بعد",
                 )
             }
@@ -325,7 +326,7 @@ private fun RelaxContent(
 private fun RelaxSectionHeader(
     title: String,
     subtitle: String,
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    icon: AppIcon,
     count: Int,
 ) {
     Row(
@@ -404,7 +405,6 @@ private fun RelaxShortCard(
                 uri = item.uri,
                 isVideo = item.isVideo,
                 contentDescription = item.name,
-                contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
             )
             Box(
@@ -483,7 +483,6 @@ private fun RelaxVideoCard(
                     uri = item.uri,
                     isVideo = item.isVideo,
                     contentDescription = item.name,
-                    contentScale = ContentScale.Crop,
                     modifier = Modifier.fillMaxSize(),
                 )
                 Box(
@@ -571,7 +570,6 @@ private fun RelaxPhotoCard(
                 uri = item.uri,
                 isVideo = item.isVideo,
                 contentDescription = item.name,
-                contentScale = ContentScale.Crop,
                 modifier = Modifier.fillMaxSize(),
             )
         }
@@ -583,7 +581,7 @@ private fun RelaxPhotoCard(
  */
 @Composable
 private fun RelaxEmptyState(
-    icon: androidx.compose.ui.graphics.vector.ImageVector,
+    icon: AppIcon,
     message: String,
 ) {
     Surface(
@@ -704,6 +702,7 @@ private fun RelaxThumbnail(
     uri: Uri,
     isVideo: Boolean,
     contentDescription: String?,
+    contentScale: ContentScale = ContentScale.Crop,
     modifier: Modifier = Modifier,
 ) {
     val context = LocalContext.current
@@ -735,7 +734,6 @@ private fun RelaxThumbnail(
         Image(
             bitmap = it.asImageBitmap(),
             contentDescription = contentDescription,
-            contentScale = ContentScale.Crop,
             modifier = modifier,
         )
     }
