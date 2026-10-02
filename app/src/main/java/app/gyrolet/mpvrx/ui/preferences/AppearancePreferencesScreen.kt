@@ -999,7 +999,6 @@ object AppearancePreferencesScreen : Screen {
               val showJellyfinTab by preferences.showJellyfinTab.collectAsState()
               val showSnapshotTab by preferences.showSnapshotTab.collectAsState()
               val showRelaxButton by preferences.showRelaxButton.collectAsState()
-              val showRelaxButton by preferences.showRelaxButton.collectAsState()
 
               SwitchPreference(
                 modifier = Modifier.settingsSearchTarget(R.string.pref_nav_music_title),

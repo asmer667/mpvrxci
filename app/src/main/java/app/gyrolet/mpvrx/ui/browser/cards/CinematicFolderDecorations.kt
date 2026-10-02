@@ -35,7 +35,7 @@ fun cinematicFolderColors(name: String): FolderColors {
         listOf("مسلسل", "مسلسلات", "series", "show", "tv", "season").any { lower.contains(it) } ->
             FolderColors(Color(0xFF0066FF), Color(0xFF00F0FF), Icons.RoundedFilled.Tv)
         listOf("موسيق", "اغاني", "أغاني", "music", "audio", "song", "mp3").any { lower.contains(it) } ->
-            FolderColors(Color(0xFFFF007A), Color(0xFF8A00FF), Icons.RoundedFilled.MusicNote)
+            FolderColors(Color(0xFFFF007A), Color(0xFF8A00FF), Icons.RoundedFilled.Audiotrack)
         listOf("صور", "photo", "picture", "gallery").any { lower.contains(it) } ->
             FolderColors(Color(0xFFFF7A00), Color(0xFFFFE600), Icons.RoundedFilled.Image)
         listOf("فيديو", "فيديوهات", "video", "vid", "clip").any { lower.contains(it) } ->
